@@ -9,7 +9,7 @@ import 'package:ribn_web_feedback/services/http/http_service.dart';
 import 'package:ribn_web_feedback/services/interfaces/jira/i_jira_service.dart';
 
 class JiraService extends IJiraService {
-  final HTTPService _httpService = new HTTPService();
+  final JiraHTTPService _httpService = new JiraHTTPService();
   final String _JIRA_CREATE_ISSUE_URL = EnvironmentConfig.JIRA_CREATE_ISSUE_URL;
   final String _JIRA_ATTACH_ISSUE_URL = EnvironmentConfig.JIRA_ATTACH_ISSUE_URL;
   @override
