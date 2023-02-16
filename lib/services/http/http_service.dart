@@ -22,6 +22,7 @@ class JiraHTTPService extends IHTTPService {
     'X-Atlassian-Token': 'nocheck',
   };
 
+
   static const List<RibnFileModel> defaultFiles = [];
 
   @override
