@@ -31,8 +31,10 @@ jobs:
           channel: stable
       - name: Install dependencies
         run: flutter pub get
+      - name: Enable web
+        run: flutter config --enable-web
       - name: Build web
-        run: flutter build web --release
+        run: flutter build web --release --incremental
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
