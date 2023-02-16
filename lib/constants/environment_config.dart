@@ -14,4 +14,6 @@ class EnvironmentConfig {
       defaultValue: "");
   static const PROJECT_KEY =
       String.fromEnvironment('PROJECT_KEY', defaultValue: "");
+  static const JIRA_AUTH_TOKEN =
+      String.fromEnvironment('JIRA_AUTH_TOKEN', defaultValue: "");
 }

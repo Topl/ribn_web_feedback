@@ -12,10 +12,15 @@ import '../../models/images/ribn_file_model.dart';
  */
 class JiraHTTPService extends IHTTPService {
   static const Map<String, dynamic> defaultParams = {};
-  Map<String, String> defaultHeaders =
-      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
-  final Map<String, String> defaultHeadersAttachments =
-      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
+  static const Map<String, String> defaultHeaders = {
+    'Authorization': 'Basic ${EnvironmentConfig.JIRA_AUTH_TOKEN}',
+    'Content-Type': 'application/json',
+  };
+  static const Map<String, String> defaultHeadersAttachments = {
+    'Authorization': 'Basic ${EnvironmentConfig.JIRA_AUTH_TOKEN}',
+    'Content-Type': 'multipart/form-data',
+    'X-Atlassian-Token': 'nocheck',
+  };
 
   static const List<RibnFileModel> defaultFiles = [];
 
