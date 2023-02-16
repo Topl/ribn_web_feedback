@@ -33,7 +33,7 @@ jobs:
       - name: Enable web
         run: flutter config --enable-web
       - name: Build web
-        run: flutter build web --release  --dart-define=ASSIGNEE_ID=secrets.ASSIGNEE_ID --dart-define=ISSUE_TYPE=secrets.ISSUE_TYPE --dart-define=JIRA_ATTACH_ISSUE_URL=secrets.JIRA_ATTACH_ISSUE_URL --dart-define=JIRA_CREATE_ISSUE_URL=secrets.JIRA_CREATE_ISSUE_URL --dart-define=JIRA_DEFAULT_HEADERS=secrets.JIRA_DEFAULT_HEADERS --dart-define=JIRA_DEFAULT_HEADERS_ATTACHMENTS=secrets.JIRA_DEFAULT_HEADERS_ATTACHMENTS --dart-define=PROJECT_KEY=secrets.PROJECT_KEY
+        run: flutter build web --release  --dart-define=ASSIGNEE_ID=${{secrets.ASSIGNEE_ID}} --dart-define=ISSUE_TYPE=${{secrets.ISSUE_TYPE}} --dart-define=JIRA_ATTACH_ISSUE_URL=${{secrets.JIRA_ATTACH_ISSUE_URL}} --dart-define=JIRA_CREATE_ISSUE_URL=${{secrets.JIRA_CREATE_ISSUE_URL}} --dart-define=JIRA_DEFAULT_HEADERS=${{secrets.JIRA_DEFAULT_HEADERS}} --dart-define=JIRA_DEFAULT_HEADERS_ATTACHMENTS=${{secrets.JIRA_DEFAULT_HEADERS_ATTACHMENTS}} --dart-define=PROJECT_KEY=${{secrets.PROJECT_KEY}}
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

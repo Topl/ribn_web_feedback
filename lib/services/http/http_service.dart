@@ -13,9 +13,9 @@ import '../../models/images/ribn_file_model.dart';
 class JiraHTTPService extends IHTTPService {
   static const Map<String, dynamic> defaultParams = {};
   Map<String, String> defaultHeaders =
-      EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS;
+      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
   final Map<String, String> defaultHeadersAttachments =
-      EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS;
+      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
 
   static const List<RibnFileModel> defaultFiles = [];
 
