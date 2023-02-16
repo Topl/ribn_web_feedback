@@ -32,6 +32,7 @@ class JiraHTTPService extends IHTTPService {
     Map<String, String>? headers,
   }) async {
     headers = defaultHeaders;
+    print("headersheaders${headers}");
     final http.Request request = await http.Request('GET', Uri.parse(url));
     request.body = json.encode(params);
     request.headers.addAll(headers);
