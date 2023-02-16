@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:ribn_web_feedback/constants/environment_config.dart';
 import 'package:ribn_web_feedback/models/images/ribn_file_model.dart';
 import 'package:ribn_web_feedback/models/jira/jira_createissue_response_model.dart';
 import 'package:ribn_web_feedback/models/jira/jira_issue_model.dart';
@@ -10,10 +10,8 @@ import 'package:ribn_web_feedback/services/interfaces/jira/i_jira_service.dart';
 
 class JiraService extends IJiraService {
   final HTTPService _httpService = new HTTPService();
-  final String _JIRA_CREATE_ISSUE_URL =
-      Platform.environment['JIRA_CREATE_ISSUE_URL']!;
-  final String _JIRA_ATTACH_ISSUE_URL =
-      Platform.environment['JIRA_ATTACH_ISSUE_URL']!;
+  final String _JIRA_CREATE_ISSUE_URL = EnvironmentConfig.JIRA_CREATE_ISSUE_URL;
+  final String _JIRA_ATTACH_ISSUE_URL = EnvironmentConfig.JIRA_ATTACH_ISSUE_URL;
   @override
   Future<JiraCreateIssueResponseModel> createJiraIssue(
       JiraIssueModel model) async {

@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:ribn_web_feedback/services/interfaces/http/i_http_service.dart';
 
+import '../../constants/environment_config.dart';
 import '../../models/images/ribn_file_model.dart';
 
 /**
@@ -13,9 +13,9 @@ import '../../models/images/ribn_file_model.dart';
 class HTTPService extends IHTTPService {
   static const Map<String, dynamic> defaultParams = {};
   Map<String, String> defaultHeaders =
-      json.decode(Platform.environment['JIRA_DEFAULT_HEADERS']!);
+      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
   final Map<String, String> defaultHeadersAttachments =
-      json.decode(Platform.environment['JIRA_DEFAULT_HEADERS_ATTACHMENTS']!);
+      json.decode(EnvironmentConfig.JIRA_DEFAULT_HEADERS_ATTACHMENTS);
 
   static const List<RibnFileModel> defaultFiles = [];
 

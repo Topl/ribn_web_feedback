@@ -28,6 +28,7 @@ import 'package:ribn_web_feedback/models/jira/jira_project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants/assets.dart';
+import '../../../constants/environment_config.dart';
 import '../../../constants/keys.dart';
 import '../../../constants/routes.dart';
 import '../../../constants/strings.dart';
@@ -52,9 +53,9 @@ class _RibnFeedbackFormState extends State<RibnFeedbackForm> {
       new TextEditingController();
   bool _validForm = false, _emailValid = true, _descriptionValid = true;
   JiraService _jiraService = JiraService();
-  final String _ASSIGNEE_ID = Platform.environment['ASSIGNEE_ID']!;
-  final String _ISSUE_TYPE = Platform.environment['ISSUE_TYPE']!;
-  final String _PROJECT_KEY = Platform.environment['PROJECT_KEY']!;
+  final String _ASSIGNEE_ID = EnvironmentConfig.ASSIGNEE_ID;
+  final String _ISSUE_TYPE = EnvironmentConfig.ISSUE_TYPE;
+  final String _PROJECT_KEY = EnvironmentConfig.PROJECT_KEY;
   String? _selectedTitle;
   final List<String> _ISSUE_LABELS = <String>["Ribnform"];
   List<String> _dropDownItems = [
